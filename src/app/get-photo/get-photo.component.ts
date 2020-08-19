@@ -9,7 +9,10 @@ import { FetchPhotoService } from "../fetch-photo.service";
 export class GetPhotoComponent implements OnInit {
   constructor(private fetchService: FetchPhotoService) {}
   image = '';
-  ngOnInit() {}
+  
+  ngOnInit() {
+    this.fetchPhoto();
+  }
 
   fetchPhoto() {
     this.fetchService.getPhoto().subscribe((photo) => {
